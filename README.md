@@ -1,6 +1,7 @@
 # Angular-Getting Started
 I followed the course on Pluralsight.
 node version used: 16.13.2 LTS
+-------------------------------------
 
 following the original readme:
 
