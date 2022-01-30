@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
+    ascSort:boolean = true;
     errorMessage: string = "";
     sub!: Subscription;
 
@@ -39,6 +40,23 @@ export class ProductListComponent implements OnInit, OnDestroy {
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
+    sortProduct():void{
+        if(this.ascSort){
+            //this sorting also works but and is the basic idea by handing over -1, 0 and 1 to the sort method 
+            this.filteredProducts = this.filteredProducts.sort((a,b)=>{
+                let first = a.productName.toLocaleLowerCase();
+                let second = b.productName.toLocaleLowerCase();
+                return (first<second) ? -1 : (first>second) ? 1 : 0;
+            });
+        } else {
+            this.filteredProducts = this.filteredProducts.sort((a,b)=>{
+                //this sorting seems easier as well as supporting unicode
+                return b.productName.toLocaleLowerCase().localeCompare(a.productName.toLocaleLowerCase());
+            });
+        }
+        this.ascSort = !this.ascSort; //toggle
+    }
+
     ngOnInit(): void {
         this.sub = this.productService.getProducts().subscribe({
             next: products => {
