@@ -25,11 +25,13 @@
                                 {{showImage ? 'Hide' : 'Show'}} Image
                             </button>
                         </th>
-                        <th (click)="sortProduct()">Product</th>
-                        <th>Code</th>
-                        <th>Available</th>
-                        <th>Price</th>
-                        <th>5 Star Rating</th>
+                        <!-- <th (click)="sortProduct()">Product</th> -->
+                        <th (click)="sortByProp('productName')">Product</th>
+                        <th (click)="sortByProp('productCode')">Code</th>
+                        <th (click)="sortByProp('releaseDate')">Available</th>
+                        <th (click)="sortByProp('description')">Description</th>
+                        <th (click)="sortByProp('price')">Price</th>
+                        <th (click)="sortByProp('starRating')">5 Star Rating</th>
                     </tr>
                 </thead>
                 <tbody>
