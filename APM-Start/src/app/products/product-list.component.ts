@@ -81,8 +81,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
                         return textB < textA ? -1 : textB > textA ? 1 : 0;
                     }
                 } else {
-                    let numberA: number = parseFloat(a[prop as keyof IProduct].toLocaleString());
-                    let numberB: number = parseFloat(b[prop as keyof IProduct].toLocaleString());
+                    let numberA: number = Number(a[prop as keyof IProduct]);
+                    let numberB: number = Number(b[prop as keyof IProduct]);
 
                     return ascending ? numberA - numberB : numberB - numberA;
                 }
