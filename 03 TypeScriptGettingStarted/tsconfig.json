@@ -5,6 +5,6 @@
         "outFile": "output.js"
     },
     "files":[
-        "app.ts"
+        "app/app.ts"
     ]
 }
