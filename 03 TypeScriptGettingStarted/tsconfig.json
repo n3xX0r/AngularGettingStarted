@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "noUnusedLocals": true,
+        "outFile": "output.js"
+    },
+    "files":[
+        "app.ts"
+    ]
+}
